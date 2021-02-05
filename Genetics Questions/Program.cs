@@ -1,37 +1,3 @@
-// NOTE TO ANYBODY INTERESTED IN PROGRAMMING: If you can think of new question types and you're willing to look through my spaghetti code, feel free to copy this program and add stuff to it!
-
-
-// v4.0 (last updated 28/05/2020)
-/* UPDATE LOG:
-	v2.0
-	- Added new question type!
-		--> [2] Possible offspring genotypes and expected proportions
-	- Fixed input validation issues
-
-	v2.1
-	- [1] Added filter to reduce the number of "boring" questions (i.e. solution is 0 or 1)
-	- Added some colours!
-		--> User inputs: blue
-		--> "Correct answer" messages: green 
-		--> "Incorrect answer" messages: red 
-		--> etc.
-	
-	v3.0
-	- Added new question type!
-		--> [3] Hardy-Weinberg equilibrium
-
-	v3.1
-	- Added random question option in main menu
-	- [3] To improve readability, added 1000s separators in population sizes and # of individuals
-
-	v4.0
-	- [1][3] Changed answer format from decimals to fractions
-	- [1] Fixed filter, so boring questions (answer = 0 or 1) will now appear in only about 1/20 questions
-	- Modified input validation so that the error message goes on the same line as the original message
-	- Various formatting tweaks
-*/
-
-
 using System;
 
 namespace Genetics_Questions
@@ -47,17 +13,17 @@ namespace Genetics_Questions
 			string FORMAT = "{0, -13}{1}";	// Format for output
 			bool errMsg = true;			// Whether the output is an error message or an original message
 			Random rand = new Random();		// Random number generator
-			int msgLine;					// Number of the line on which to print an error message if the user's input is invalid
+			int msgLine;                    // Number of the line on which to print an error message if the user's input is invalid
 
+			Console.WindowWidth = 150;
+			Console.WindowHeight = 40;
 			Console.Clear();
 			Console.Write(
 				"Welcome to the unofficial practice question generator for the genetics unit of General Biology I!" +
 				"\nLast update: 2020/05/28" +
 				"\n" +
 				"\nIf you notice a bug, you can report it to me:" +
-				"\n\tlouishildebrand@hotmail.ca" +
-				"\nYou can also try using the older version, which was more extensively tested:" +
-				"\n\trepl.it/@Lonelyboi2718/Genetics-Study-Guide-In-Progress" +
+				"\n\thttps://github.com/louis-hildebrand/Genetics-Questions/issues" +
 				"\n\n" + new String('_', 100) + "\n\n" +
 				"\nChoose one of the question types below by typing in the corresponding number:" +
 				"\n" +
